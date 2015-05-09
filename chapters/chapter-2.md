@@ -1,4 +1,4 @@
-# Chapter 2: Distributed Systems Basics
+# Chapter 2: Distributed Processing Basics
 
 So you want to learn a distributed system? If this is your *first* distributed system, you'll find that this world is substantially more complicated than that of a single machine. Namely, so many more things go wrong! Machines can go down, networks can partition, garbage collectors can stop the world - the number of failure scenarios is endless. The first thing to do is start considering failure as the *norm*. As the number of nodes that you work with increases, the chances of any single node in your cluster having a problem increases. So where does that leave us?
 
