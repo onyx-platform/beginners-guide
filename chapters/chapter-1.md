@@ -20,4 +20,4 @@ To work through this guide, you're going to need Java 8, Git, and [Leiningen](ht
 
 ## Who am I?
 
-My name is Michael Drogalis, and I'm the creator of this beast!
+My name is [Michael Drogalis](https://twitter.com/MichaelDrogalis), and I'm the creator of this beast!
