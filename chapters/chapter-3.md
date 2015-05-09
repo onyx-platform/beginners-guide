@@ -1,4 +1,4 @@
-# Chapter 2: The Keys to Dynamic Analytics
+# Chapter 3: The Keys to Dynamic Analytics
 
 Let's take some time now to explore what it good dynamic analytics systems. We're going to dive into the problems with current approaches and start to sketch out an alternate solution. I get asked a lot "Why *did* you build Onyx anyway?" I hope this chapter justifies its extistence, and demonstrates how radically difference Onyx's approach is to distributed computation.
 
