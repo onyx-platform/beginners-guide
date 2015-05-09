@@ -30,7 +30,7 @@ An interesting fusion of stream and batch processing is taking a set of tweets o
 
 ### High latency workflows
 
-The last computation style that I wanted to cover are high latency workflows. In Onyx, we say that your data is run over a workflow, but this shouldn't be confused with a high latency workflow (HLW). An example of an HLW is an order processing. Pieces of data can take days or weeks to be moved from one task to another, and this requires a distinctly different type of computation engine.
+The last computation style that I wanted to cover are high latency workflows. In Onyx, we say that your data is run over a workflow, but this shouldn't be confused with a high latency workflow. We chose to use the term "workflow" to describe our computation style because it's transparently reused across batch and streaming workloads. By contrast, an example of an high latency workflow is an order processing. Pieces of data can take days or weeks to be moved from one task to another, and this requires a distinctly different type of computation engine.
 
 Onyx doesn't try to compete in this space, but we'll talk about later why Onyx certainly isn't precluded from being extended to handle these workloads as well.
 
