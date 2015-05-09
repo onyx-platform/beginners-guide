@@ -41,7 +41,7 @@ user=> h
 #<core$comp$fn__4192 clojure.core$comp$fn__4192@271796d3>
 ```
 
-That's not terribly helpful. To be clear, I'm *not* criticizing Clojure here. The point that I'm making is that composition of code obscures the structure of what lies within the computation. Make no mistake: **an ability to understand the structure of your distributed processing program at runtime is deadly for diagnosing problems**.
+That's not terribly helpful. To be clear, I'm *not* criticizing Clojure here. The point that I'm making is that composition of code obscures the structure of what lies within the computation. Make no mistake: **an inability to understand the structure of your distributed processing program at runtime is deadly for diagnosing problems**.
 
 How can we work around this problem? As Clojurists, we know the that if we're not working with code, then we're working with data. Strong analytics systems are aggressively data drive. Data interfaces make your designs simpler, and that increases business opportunity. The technique that we need to employ is similar to how Clojure treats side effects. We don't pretend that code is absent from our programs. Rather, we *minimize* the use of code and describe our programs as data as the norm.
 
