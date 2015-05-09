@@ -57,4 +57,14 @@ On the other hand, to the extent that the *descriptions* of your computations ar
 
 If you're going to build a reliable system, you need to be able to understand how it's behaving when it's live. As more of your computational description becomes data, the easier it becomes understand what the computation is at runtime. One critical trait of Clojure's data structures are that they print to human-readable formats. This is decisive in understanding what instructions each node in your cluster has received while it's live in production.
 
+## Automatic database schema generation
+
+A distinct trait of highly flexible, dynamic analytics applications is their ability to store computations to be run at different points in time. Code descriptions of computations are terribly complex to serialize to a database. We'd prefer to skip this mess altogether and serialize *data* to a database. If you use a platform that communicates data via its interfaces, you can work this to your advantage and automatically generate database schemas. Your data driven computation descriptions will serialize neatly to a database without any human intervention.
+
+## Automatic user interface generation
+
+By the same token as database schema generation, user interfaces can also be generated. A large component of the effort in building analytics systems is constructing the user interfaces that humans create computations with. Using immutable values that can cross the wire without modification to ClojureScript saves massive amounts of time on this front. The trick is having a backend platform that communicates through its interfaces with those *same* data structures.
+
+## Generative testing
+
 
