@@ -2,7 +2,7 @@
 
 Let's take some time now to explore what it good dynamic analytics systems. We're going to dive into the problems with current approaches and start to sketch out an alternate solution. I get asked a lot "Why *did* you build Onyx anyway?" I hope this chapter justifies its extistence, and demonstrates how radically difference Onyx's approach is to distributed computation.
 
-## The Fundamental Problem
+## The fundamental problem
 
 I'll assert that to build good analytics applications, the foundation trait that your design needs it to *pull apart* the different pieces of the computation. Modern platforms frequently give you one level of abstraction to work with: collections processing. It's certainly alluring abstraction. What could be more comfortable than working with something that *feels* like function composition, but can be transparently applied to petabytes worth of data?
 
@@ -46,3 +46,15 @@ That's not terribly helpful. To be clear, I'm *not* criticizing Clojure here. Th
 How can we work around this problem? As Clojurists, we know the that if we're not working with code, then we're working with data. Strong analytics systems are aggressively data drive. Data interfaces make your designs simpler, and that increases business opportunity. The technique that we need to employ is similar to how Clojure treats side effects. We don't pretend that code is absent from our programs. Rather, we *minimize* the use of code and describe our programs as data as the norm.
 
 There are lots of great papers and talks out there on why data driven systems are often superior - I'd recommend searching around. I'm going to spend the rest of this chapter calling out the advantages that are gained specifically for distributed data processing systems.
+
+## Sharing immutable values across tenants
+
+One of the main principles of being able to share values is it avoids many problems with concurrency. There's no harm in sharing a value if no one is going to mutate it. An extensions of this property is that you can share values across *tenants*. Analytics systems are often multi-tenanted. That means that there are disparate sections of data for different consumers, and consumers shouldn't see each one another's data.
+
+On the other hand, to the extent that the *descriptions* of your computations are data, you become free to share these across tenants. Computations across tenants are often similiar in structure, flow, and transformation type. You can imagine building up a catalog of values that enumerate all possible elements of a computation that your system offers, and sharing that catalog across tenants in your system.
+
+## Debugging live values
+
+If you're going to build a reliable system, you need to be able to understand how it's behaving when it's live. As more of your computational description becomes data, the easier it becomes understand what the computation is at runtime. One critical trait of Clojure's data structures are that they print to human-readable formats. This is decisive in understanding what instructions each node in your cluster has received while it's live in production.
+
+
