@@ -67,4 +67,8 @@ By the same token as database schema generation, user interfaces can also be gen
 
 ## Generative testing
 
+Clojure has a strong heritage in employing many different types of testing - not the least of which is generative (or property-based) testing. When the bulk of your computation description is data, you can intelligently mix and match pieces of these descriptions and generatively test hundreds of millions of test cases without breaking a sweat.
 
+## Runtime variable substitution
+
+Many computational descriptions need to be *parameterized*. You'll often need to feed in a database connection URL, a port number, or a secret access key. When you're working primarily with code, it's too easy to let these variables get stuck inside your functions. Your programs become far cleaner and more expressive when runtime variable substitution is an explicit feature that you can work with.
