@@ -18,7 +18,18 @@ Alright, we have multiple machines and lots of data? Is there anything else we s
 
 ### Batch computation
 
+Batch workloads are a type of data processing where the data set (or *corpus*) you're dealing with is finite. The goal is to take a well defined data set as input, and produce a well defined output set of data. This process is usually a pure function - no side effects typically take place. An example of a batch workload is taking a list of employee work days and producing a pay period summary. You might run this batch workload once at the end of the month.
+
 ### Stream processing
+
+Stream processing lies on the opposite end of the data spectrum. In a streaming workload, the dataset is theortically infinite. A good example of a stream are tweets. Presumably, as long as Twitter is around, tweets will continue to be tweeted. There's no "end of tweet". Streaming jobs usually try to process every piece of data (or at least make a "best effort") and produce aggregates for a sliding window of time.
+
+An interesting fusion of stream and batch processing is taking a set of tweets over a bounded period of time and computing a batch workload based off these tweets. You can start to see the interplay between these two types of workloads and how you can use them together to deviler powerful analytics.
 
 ## The competition
 
+To close out this chapter, I want to note what platforms are already out there, and which workloads they work best on.
+
+The traditional batch processor is [Hadoop](https://hadoop.apache.org/). Hadoop is a *very* mature ecosystem. It's battle tested and widely used. On the other side of the equation, [Storm](https://storm.apache.org/) is a popular streaming platform. Storm has been around for a few years, and it's architecture is most similar to Onyx's. Onyx uses Storm's exact reliability algorithm. Finally, [Spark](https://spark.apache.org/) is absolutely worth a look. Spark is perhaps the most ambitious of these three, as it is capable of running in both batching and streaming mode - the same as Onyx.
+
+Onyx competes against all three of these projects, and seeks to deliver flexibility that can't be achieved with any of these APIs. At the same time, we respect that these are battle-tested systems. If you're working in a high stakes domain, you should consider one of these platforms first. We do our best to test Onyx thoroughly, but keep in mind that it's still *very* young compared to these other platforms!
